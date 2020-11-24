@@ -1,0 +1,35 @@
+.register-background {
+	background-image: url('https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg');
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+}
+
+.login-background {
+	background-image: url('https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?size=626&ext=jpg');
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+}
+
+.login-styling {
+	font-weight: 1000;
+	font-size: 50px;
+	color: white;
+}
+
+.register-styling {
+	font-weight: 1000;
+	font-size: 50px;
+	color: white;
+}
+
+.letter-to-audience {
+	color: white;
+	font-size: 20px;
+	text-shadow:
+			0.07em 0 black,
+			0 0.07em black,
+			-0.07em 0 black,
+			0 -0.07em black;
+}

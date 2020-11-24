@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import './Auth.css';
 
 
 
@@ -57,9 +58,9 @@ class Auth extends Component {
         return(<div>
             {this.state.newUser ? 
             <div>
-							<div>
-								<img src="https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg" alt="various foods" height={500}/>
-                <h3>Register</h3>
+				<div className="register-background">
+								
+                <h3 className="login-styling">Register</h3>
                 <form onSubmit={e => this.register(e)}>
                     <input 
                         name="email" 
@@ -81,16 +82,15 @@ class Auth extends Component {
                         onChange={ e => this.changeHandler(e)}
                     />
                     <button>Submit</button>
-                </form>
-                <button onClick={this.toggleNewUser}>Already a user?</button>
-								</div>
+                     </form>
+                    <button onClick={this.toggleNewUser}>Already a user?</button>
+				</div>
             </div>
             :
             <div>
-							<div>
-								<img src="https://img.freepik.com/free-photo/top-view-fast-food-with-copy-space_23-2148273099.jpg?size=626&ext=jpg" alt="american food" height={500}/>
-                <h3>Login</h3>
-                <form onSubmit={e => this.login(e)}>
+				<div className="login-background">
+                 <h3 className="login-styling">Login</h3>
+                    <form onSubmit={e => this.login(e)}>
                     <input 
                         name="email" 
                         value={email} 
@@ -107,6 +107,7 @@ class Auth extends Component {
                     <button>Submit</button>
                 </form>
                 <button onClick={this.toggleNewUser}>Want to join?</button>
+                <h4 className="letter-to-audience">This is a website created for the sharing of recipes with your closest friends and family. The whole idea is to help each other perfect their cooking skills/recipes. This site was intended to help you discover new recipes and learn new cooking techniques. </h4>
 								</div>
             </div>}
             </div>

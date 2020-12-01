@@ -111,6 +111,7 @@ class Auth extends Component {
                         onChange={ e => this.changeHandler(e)}
                     />
                     <button>Submit</button>
+                    
                 </form>
                 <button onClick={this.toggleNewUser}>Want to join?</button>
                         <h4 className="letter-to-audience">This is a website created for the sharing of recipes with your closest friends and family. The whole idea is to help each other perfect their cooking skills/recipes. This site was intended to help you discover new recipes and learn new cooking techniques. </h4>

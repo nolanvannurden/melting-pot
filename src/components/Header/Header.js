@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <nav className="nav-header">
-      <h1>WELCOME</h1>
+      <h1>Welcome to, The Melting Pot!</h1>
       <div className="nav-links">
         <div>
-          <Link to="/create_recipe">Post a Recipe</Link>
+          <Link to="/create_recipe">Recipes</Link>
         </div>
         <div>
-          <Link to="/feed">Feed</Link>
+          <Link to="/feed">Post a Recipe</Link>
         </div>
       </div>
     </nav>

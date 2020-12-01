@@ -1,7 +1,21 @@
 .nav-header {
-		background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx03VI5upJHG5lobI6JT1GqqwxtoxXk6fxeA&usqp=CAU');
-		height: 5vh;
-		padding: 0ch;
-		width: 100%;
-		background-size: cover;
+  padding: 0 20px;
+  height: 10vh;
+  background-color: #f5f5f5;
+  color: #488db4;
+  text-align: center;
+  font-size: 150%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-header a {
+  color: inherit;
+}
+.nav-links {
+  display: flex;
+  width: 33%;
+  justify-content: space-around;
+  align-items: center;
 }

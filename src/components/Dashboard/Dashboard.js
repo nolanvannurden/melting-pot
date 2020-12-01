@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { getUser } from "../redux/reducer"
-import PostDisplay from './PostDisplay/PostDisplay'
-import './Feed.css'
+import { getUser } from "../../redux/reducer";
+import PostDisplay from "../PostDisplay/PostDisplay";
+import './Dashboard.css'
 
 class Dashboard extends Component {
   constructor() {
@@ -71,6 +71,7 @@ class Dashboard extends Component {
   };
 
   render() {
+    console.log(this.state.posts);
     let mappedPosts;
     if (this.state.posts[0]) {
       mappedPosts = this.state.posts.map((post, index) => {
@@ -84,11 +85,10 @@ class Dashboard extends Component {
         );
       });
     } else {
-      mappedPosts = <div>Be the first to post!</div>;
+      mappedPosts = <div>No Posts Yet!</div>;
     }
     return (
       <>
-      <div className="Post-background">
         <div className="dashboard-input">
           <textarea
             id="new-post"
@@ -105,11 +105,10 @@ class Dashboard extends Component {
           </button>
         </div>
 
-          <section className="app-body">
-            <div className="padding"></div>
-            <ul className="flex-vertical-center post-feed">{mappedPosts}</ul>
-          </section>
-        </div>
+        <section className="app-body">
+          <div className="padding"></div>
+          <ul className="flex-vertical-center post-feed">{mappedPosts}</ul>
+        </section>
       </>
     );
   }

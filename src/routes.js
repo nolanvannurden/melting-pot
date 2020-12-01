@@ -9,4 +9,4 @@ export default (
 			<Route path="/create_post" component={Post}/>
 			<Route path="/feed" component={Feed}/>
 	</Switch>
-)
+);

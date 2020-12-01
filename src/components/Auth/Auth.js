@@ -1,6 +1,10 @@
 import axios from 'axios';
 import React, {Component} from 'react';
+import {Link, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux'
 import './Auth.css';
+import {loginUser} from '../../redux/reducer';
+
 
 
 
@@ -33,10 +37,12 @@ class Auth extends Component {
         try {
             const user = await axios.post('/auth/login', {email, password})
             this.props.loginUser(user.data)
+            console.log(this.props)
+            // bring in with router 
             this.props.history.push('/feed')
         } 
         catch(err){ 
-                alert(err.response.request.response)
+                alert(err)
         }
     }
 
@@ -49,7 +55,7 @@ class Auth extends Component {
             this.props.history.push('/feed')
         } 
         catch(err){ 
-                alert(err.response.request.response)
+                alert(err)
         }
     }
 
@@ -107,13 +113,30 @@ class Auth extends Component {
                     <button>Submit</button>
                 </form>
                 <button onClick={this.toggleNewUser}>Want to join?</button>
-                <h4 className="letter-to-audience">This is a website created for the sharing of recipes with your closest friends and family. The whole idea is to help each other perfect their cooking skills/recipes. This site was intended to help you discover new recipes and learn new cooking techniques. </h4>
-								</div>
-            </div>}
+                        <h4 className="letter-to-audience">This is a website created for the sharing of recipes with your closest friends and family. The whole idea is to help each other perfect their cooking skills/recipes. This site was intended to help you discover new recipes and learn new cooking techniques. </h4>
+				</div>
+                    <div className="flex-horizontal link">
+                        <Link to="/feed" className="input-container-button">
+                            Log in
+                        </Link>
+                    </div>      
+                </div>}
             </div>
         )
     }
 }
 
 
-export default Auth
+const mapDispatchToProps = {
+    loginUser
+};
+
+const mapStateToProps = (reduxState) => {
+    const {user, isLoggedIn} = reduxState;
+    return{
+        user,
+        isLoggedIn
+    };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(withRouter(Auth))

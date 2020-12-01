@@ -6,7 +6,7 @@ module.exports = {
 		const {email, username, password} = req.body;
 		const foundUser = await db.check_user(email);
 			if (foundUser[0]){
-				res.status(400).send('email already registered')
+				return res.status(400).send('email already registered')
 			}
 			const salt = bcrypt.genSaltSync(10);
 			const hash = bcrypt.hashSync(password, salt);

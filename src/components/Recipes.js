@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { getUser } from "../redux/reducer"
-import PostDisplay from './PostDisplay/PostDisplay'
-import './Feed.css'
+import { getUser } from "../redux/reducer";
+import PostDisplay from "../components/PostDisplay/PostDisplay";
+import './Recipes.css'
+import Edit from '../components/PostDisplay/Edit';
 
-class Dashboard extends Component {
+class Recipes extends Component {
   constructor() {
     super();
     this.state = {
@@ -61,7 +62,6 @@ class Dashboard extends Component {
   };
 
   handleDelete = post_id => {
-    console.log("fired: post id", post_id);
     axios
       .delete(`/api/posts/${post_id}`)
       .then(() => {
@@ -71,6 +71,7 @@ class Dashboard extends Component {
   };
 
   render() {
+    console.log(this.state.posts);
     let mappedPosts;
     if (this.state.posts[0]) {
       mappedPosts = this.state.posts.map((post, index) => {
@@ -84,11 +85,11 @@ class Dashboard extends Component {
         );
       });
     } else {
-      mappedPosts = <div>Be the first to post!</div>;
+      mappedPosts = <div>No Posts Yet!</div>;
     }
     return (
       <>
-      <div className="Post-background">
+			<div className="recipes-background">
         <div className="dashboard-input">
           <textarea
             id="new-post"
@@ -104,12 +105,13 @@ class Dashboard extends Component {
             Post
           </button>
         </div>
-<div>THIS IS THE FEED Component</div>
-          <section className="app-body">
-            <div className="padding"></div>
-            <ul className="flex-vertical-center post-feed">{mappedPosts}</ul>
-          </section>
-        </div>
+
+        <section className="app-body">
+          <div className="padding"></div>
+          <ul className="flex-vertical-center post-feed">{mappedPosts}</ul>
+        </section>
+					<Edit/>
+				</div>
       </>
     );
   }
@@ -119,4 +121,4 @@ const mapStateToProps = reduxState => {
   return reduxState;
 };
 
-export default connect(mapStateToProps, { getUser })(Dashboard);
+export default connect(mapStateToProps, { getUser })(Recipes);

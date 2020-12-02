@@ -8,6 +8,9 @@ const Header = () => {
       <h1>Welcome to, The Melting Pot!</h1>
       <div className="nav-links">
         <div>
+          <Link to="/">Home</Link>
+        </div>
+        <div>
           <Link to="/create_recipe">Recipes</Link>
         </div>
         <div>

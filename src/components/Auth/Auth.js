@@ -97,19 +97,19 @@ class Auth extends Component {
 				<div className="login-background">
                  <h3 className="login-styling">Login</h3>
                     <form onSubmit={e => this.login(e)}>
-                    <input 
-                        name="email" 
-                        value={email} 
-                        placeholder="Email" 
-                        onChange={ e => this.changeHandler(e)}
-                    />
-                    <input 
-                        name="password" 
-                        type="password"
-                        value={password} 
-                        placeholder="password" 
-                        onChange={ e => this.changeHandler(e)}
-                    />
+                        <input 
+                            name="email" 
+                            value={email} 
+                            placeholder="Email" 
+                            onChange={ e => this.changeHandler(e)}
+                        />
+                        <input 
+                            name="password" 
+                            type="password"
+                            value={password} 
+                            placeholder="password" 
+                            onChange={ e => this.changeHandler(e)}
+                        />
                     <button>Submit</button>
                     
                 </form>

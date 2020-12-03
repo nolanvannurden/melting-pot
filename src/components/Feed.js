@@ -61,7 +61,6 @@ class Dashboard extends Component {
   };
 
   handleDelete = post_id => {
-    console.log("fired: post id", post_id);
     axios
       .delete(`/api/posts/${post_id}`)
       .then(() => {
@@ -71,7 +70,7 @@ class Dashboard extends Component {
   };
 
   render() {
-    let mappedPosts;
+    let mappedPosts = [];
     if (this.state.posts[0]) {
       mappedPosts = this.state.posts.map((post, index) => {
         return (
@@ -84,7 +83,7 @@ class Dashboard extends Component {
         );
       });
     } else {
-      mappedPosts = <div>Be the first to post!</div>;
+      mappedPosts = <div>lesss post</div>;
     }
     return (
       <>

@@ -72,7 +72,7 @@ class Recipes extends Component {
 
   render() {
     console.log(this.state.posts);
-    let mappedPosts;
+    let mappedPosts = [];
     if (this.state.posts[0]) {
       mappedPosts = this.state.posts.map((post, index) => {
         return (

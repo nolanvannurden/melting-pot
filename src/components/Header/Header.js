@@ -1,8 +1,14 @@
 import './Header.css'
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import axios from 'axios';
+import {connect} from "react-redux";
+import logoutUser from '../../redux/reducer';
 
-const Header = () => {
+
+
+
+const Header = (props) => {
   return (
     <nav className="nav-header">
       <h1>Welcome to, The Melting Pot!</h1>
@@ -16,9 +22,17 @@ const Header = () => {
         <div>
           <Link to="/feed">Post a Recipe</Link>
         </div>
+        <div onClick={ () => {
+          props.logoutUser(); //front-end
+          axios.post('/auth/logout') //back-end
+          .then(() => props.history.push("/")) //redirection
+
+        } }>
+           Logout
+        </div>
       </div>
     </nav>
   );
 };
 
-export default Header;
+export default  connect(null, {logoutUser})(withRouter(Header));

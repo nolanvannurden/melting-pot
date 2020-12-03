@@ -1,12 +1,13 @@
 import axios from 'axios';
 
+
 const initialState = {
 	user: {},
 	isLoggedIn: false
 }
 
 const LOGIN_USER = "LOGIN_USER";
-// const LOGOUT_USER = "LOGOUT_USER";
+const LOGOUT_USER = "LOGOUT_USER";
 const GET_USER = "GET_USER";
 
 export function loginUser(user){
@@ -16,12 +17,12 @@ export function loginUser(user){
 	}
 }
 
-// export function logoutUser(){
-// 	return{
-// 			type: LOGOUT_USER,
-// 			payload: initialState
-// 	}
-// }
+export const logoutUser = () => (
+	{
+			type: LOGOUT_USER,
+			payload: {initialState}
+	}
+)
 
 export function getUser(){
 	const user = axios.get('/api/user').then(res => res.data)
@@ -31,12 +32,13 @@ export function getUser(){
 	}
 }
 
-export default function(state = initialState, action){
+export default function reducer(state = initialState, action){
+	console.log(action)
 	switch(action.type){
 			case LOGIN_USER:
 					return {...state, user: action.payload, isLoggedIn: true}
-			// case LOGOUT_USER:
-			// 		return {...state, ...action.payload}
+			case LOGOUT_USER:
+					return {...state, ...action.payload}
 			case GET_USER + "_PENDING":
 				return state
 			case GET_USER + "_FULFILLED":

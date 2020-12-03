@@ -27,6 +27,19 @@ class Dashboard extends Component {
     this.getPosts();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.user.userId !== this.props.user.userId) {
+      axios
+        .get(`/api/posts/${this.props.user.userId}`)
+        .then((res) => {
+          this.setState({ posts: res.data });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }
+
   getPosts = () => {
     axios
       .get(`/api/posts/${this.props.user.user_id}`)
@@ -61,7 +74,6 @@ class Dashboard extends Component {
   };
 
   handleDelete = post_id => {
-    console.log("fired: post id", post_id);
     axios
       .delete(`/api/posts/${post_id}`)
       .then(() => {
@@ -69,9 +81,16 @@ class Dashboard extends Component {
       })
       .catch(err => console.log(err));
   };
+  
+  logout = () => {
+    axios.post('/api/logout').then(res => {
+        props.logout()
+        props.history.push('/')
+    })
+    .catch(err => console.log(err))
+}
 
   render() {
-    console.log(this.state.posts);
     let mappedPosts;
     if (this.state.posts[0]) {
       mappedPosts = this.state.posts.map((post, index) => {

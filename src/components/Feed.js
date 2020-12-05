@@ -102,6 +102,7 @@ class Dashboard extends Component {
           <button onClick={this.handleClick} className="input-container-button">
             Post
           </button>
+          {/* MAPPED POSTS */}
         </div>
 <div>THIS IS THE FEED Component</div>
           <section className="app-body">

@@ -13,7 +13,7 @@
 .nav-header a {
   color: inherit;
 }
-.nav-links {
+.nav-links{
   display: flex;
   width: 33%;
   justify-content: space-around;

@@ -3,7 +3,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import axios from 'axios';
 import {connect} from "react-redux";
-import logoutUser from '../../redux/reducer';
+import {logoutUser} from '../../redux/reducer';
 
 
 
@@ -22,17 +22,18 @@ const Header = (props) => {
         <div>
           <Link to="/feed">Post a Recipe</Link>
         </div>
-        <div onClick={ () => {
+        <div>
+           <button className="logout" onClick={ () => {
           props.logoutUser(); //front-end
           axios.post('/auth/logout') //back-end
-          .then(() => props.history.push("/")) //redirection
-
-        } }>
-           Logout
+          .then(() => props.history.push("/"))
+        } }>Logout</button>
         </div>
       </div>
     </nav>
   );
 };
+
+
 
 export default  connect(null, {logoutUser})(withRouter(Header));

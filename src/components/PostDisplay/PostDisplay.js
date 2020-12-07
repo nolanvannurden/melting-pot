@@ -15,7 +15,6 @@ class PostDisplay extends React.Component {
   };
 
   render() {
-		<div>THIS IS THE POST DISPLAY COMPONENT</div>
     const { text, post_id, p_time } = this.props.post;
     const { handleDelete, handleEdit } = this.props;
     return (

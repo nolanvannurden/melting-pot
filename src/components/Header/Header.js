@@ -10,8 +10,10 @@ import {logoutUser} from '../../redux/reducer';
 
 const Header = (props) => {
   return (
+
+    
     <nav className="nav-header">
-      <h1>Welcome to, The Melting Pot!</h1>
+      <h1>Welcome to The Melting Pot!</h1>
       <div className="nav-links">
         <div>
           <Link to="/">Home</Link>

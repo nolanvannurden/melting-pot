@@ -82,14 +82,7 @@ class Dashboard extends Component {
       .catch(err => console.log(err));
   };
   
-  logout = () => {
-    axios.post('/api/logout').then(res => {
-        props.logout()
-        props.history.push('/')
-    })
-    .catch(err => console.log(err))
-}
-
+  
   render() {
     let mappedPosts;
     if (this.state.posts[0]) {

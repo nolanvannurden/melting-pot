@@ -1,2 +1,2 @@
-select * from post
+select * from Posts
 where user_id = $1;

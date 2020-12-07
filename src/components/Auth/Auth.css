@@ -17,6 +17,8 @@
 	font-weight: 1000;
 	font-size: 50px;
 	color: white;
+	flex: auto;
+	word-spacing: 2;
 }
 
 .register-styling {
@@ -33,4 +35,8 @@
 			0 0.07em black,
 			-0.07em 0 black,
 			0 -0.07em black;
+}
+.login-info {
+	color: black;
+	flex: auto;
 }

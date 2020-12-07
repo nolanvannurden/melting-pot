@@ -69,8 +69,14 @@ class Dashboard extends Component {
       .catch(err => console.log(err));
   };
 
+
+
   render() {
-    let mappedPosts = [];
+    let mappedPosts = this.state.posts.map((post, index) => {
+      return (
+          <PostDisplay key={index} post={post}/>
+      )
+  })
     if (this.state.posts[0]) {
       mappedPosts = this.state.posts.map((post, index) => {
         return (
@@ -80,10 +86,11 @@ class Dashboard extends Component {
             key={index}
             post={post}
           />
+          
         );
       });
     } else {
-      mappedPosts = <div>lesss post</div>;
+      mappedPosts = []
     }
     return (
       <>
@@ -103,11 +110,13 @@ class Dashboard extends Component {
             Post
           </button>
           {/* MAPPED POSTS */}
+          
         </div>
 <div>THIS IS THE FEED Component</div>
           <section className="app-body">
             <div className="padding"></div>
             <ul className="flex-vertical-center post-feed">{mappedPosts}</ul>
+          <div>{mappedPosts}</div>
           </section>
         </div>
       </>

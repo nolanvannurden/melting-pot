@@ -111,10 +111,11 @@ class Feed extends Component {
           </button>
           
         </div>
-<div>THIS IS THE FEED Component</div>
           <section className="app-body">
             <div className="padding"></div>
-            <div className="flex-vertical-center post-feed">{mappedPosts}</div> 
+            <div className="post-feed">
+              <ul className="post-feed">{mappedPosts}</ul>
+              </div> 
           </section>
         </div>
       </>

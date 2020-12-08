@@ -3,7 +3,7 @@ import React from "react";
 
 const Post = props => {
   return (
-    <li className="post-container">
+    <div className="post-container">
       <div>
         <p className="post-text">{props.text}</p>
       </div>
@@ -24,7 +24,7 @@ const Post = props => {
         </button>
         <span className="date-span">{props.time}</span>
       </div>
-    </li>
+    </div>
   );
 };
 

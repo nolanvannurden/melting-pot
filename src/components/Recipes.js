@@ -86,7 +86,6 @@ class Recipes extends Component {
             post={post}
           />
 				);
-				console.log(this.handleDelete)
       });
     } else {
       mappedPosts = <div></div>;
@@ -116,7 +115,8 @@ class Recipes extends Component {
         </section>
 					{/* <Edit/> */}
 				<div className='recipes'>
-</div>
+					{mappedPosts}
+				</div>
 				</div>
 				
     );

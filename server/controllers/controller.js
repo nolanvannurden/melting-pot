@@ -23,10 +23,10 @@ module.exports = {
       });
   },
   editPost: (req, res) => {
-    const { id } = req.params;
+    const { post_id } = req.params;
     const { text } = req.body;
     const db = req.app.get("db");
-    db.edit_post([id, text])
+    db.edit_post([post_id, text])
       .then((data) => {
         res.status(201).send(data)
       })

@@ -1,6 +1,6 @@
 UPDATE Posts
-SET text = $2
-WHERE post_id = $1
+SET post_id = $1
+WHERE text = $2;
 
-SELECT * FROM Posts
+SELECT * FROM Posts;
 

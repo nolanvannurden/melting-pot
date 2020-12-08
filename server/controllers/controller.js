@@ -15,8 +15,8 @@ module.exports = {
     const { post } = req.body;
     const db = req.app.get("db");
     db.add_post([id, post, new Date()])
-      .then(() => {
-        res.sendStatus(201);
+      .then((data) => {
+        res.status(201).send(data);
       })
       .catch(() => {
         res.sendStatus(500);
@@ -27,8 +27,8 @@ module.exports = {
     const { text } = req.body;
     const db = req.app.get("db");
     db.edit_post([id, text])
-      .then(posts => {
-        res.sendStatus(200);
+      .then((data) => {
+        res.status(201).send(data)
       })
       .catch(err => res.status(500).send(err));
   },
@@ -36,8 +36,8 @@ module.exports = {
     const { id } = req.params;
     const db = req.app.get("db");
     db.delete_post([id])
-      .then(() => {
-        res.sendStatus(200);
+      .then((data) => {
+        res.status(201).send(data)
       })
       .catch(err => res.status(500).send(err));
   }

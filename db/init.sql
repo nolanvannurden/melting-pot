@@ -5,3 +5,10 @@ CREATE TABLE users (
     username VARCHAR(20) NOT NULL,
     password TEXT NOT NULL
 );
+
+create table if not exists Posts (
+    post_id serial primary key,
+    user_id int references users(user_id),
+    text varchar(250),
+    p_time date
+);

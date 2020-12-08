@@ -58,8 +58,8 @@ class Dashboard extends Component {
       .post(`/api/posts/${this.props.user.user_id}`, {
         post: this.state.userInput
       })
-      .then(() => {
-        this.getPosts();
+      .then((res) => {
+        this.setState({posts: [...res.data]})
       })
       .catch(err => console.log(err));
   };
@@ -97,6 +97,7 @@ class Dashboard extends Component {
         );
       });
     } else {
+      
       mappedPosts = <div>No Posts Yet!</div>;
     }
     return (
@@ -119,7 +120,7 @@ class Dashboard extends Component {
 
         <section className="app-body">
           <div className="padding"></div>
-          <ul className="flex-vertical-center post-feed">{mappedPosts}</ul>
+          {/* <ul className="flex-vertical-center post-feed">{mappedPosts}</ul> */}
         </section>
       </>
     );

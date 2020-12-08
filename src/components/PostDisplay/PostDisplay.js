@@ -8,8 +8,16 @@ class PostDisplay extends React.Component {
     this.state = {
       isEditing: false
     };
-  }
+	}
+	
+	handleCancel = () => {
+    this.setState({ postInput: this.text });
+    this.props.toggleEdit();
+  };
 
+  handleChange = e => {
+    this.setState({ postInput: e.target.value });
+  };
   toggleEdit = () => {
     this.setState({ isEditing: !this.state.isEditing });
   };

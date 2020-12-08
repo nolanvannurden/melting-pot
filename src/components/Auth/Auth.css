@@ -29,6 +29,7 @@
 
 .letter-to-audience {
 	color: white;
+	flex: auto;
 	font-size: 20px;
 	text-shadow:
 			0.07em 0 black,

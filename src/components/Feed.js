@@ -5,7 +5,7 @@ import { getUser } from "../redux/reducer"
 import PostDisplay from './PostDisplay/PostDisplay'
 import './Feed.css'
 
-class Dashboard extends Component {
+class Feed extends Component {
   constructor() {
     super();
     this.state = {
@@ -29,7 +29,7 @@ class Dashboard extends Component {
 
   getPosts = () => {
     axios
-      .get(`/api/posts/${this.props.user.user_id}`)
+      .get(`/api/posts/${this.props.user.userId}`)
       .then(res => {
         this.setState({ posts: [...res.data] });
       })
@@ -42,7 +42,7 @@ class Dashboard extends Component {
 
   handleClick = () => {
     axios
-      .post(`/api/posts/${this.props.user.user_id}`, {
+      .post(`/api/posts/${this.props.user.userId}`, {
         post: this.state.userInput
       })
       .then(() => {
@@ -109,14 +109,12 @@ class Dashboard extends Component {
           <button onClick={this.handleClick} className="input-container-button">
             Post
           </button>
-          {/* MAPPED POSTS */}
           
         </div>
 <div>THIS IS THE FEED Component</div>
           <section className="app-body">
             <div className="padding"></div>
-            <ul className="flex-vertical-center post-feed">{mappedPosts}</ul>
-          <div>{mappedPosts}</div>
+            <div className="flex-vertical-center post-feed">{mappedPosts}</div> 
           </section>
         </div>
       </>
@@ -128,4 +126,4 @@ const mapStateToProps = reduxState => {
   return reduxState;
 };
 
-export default connect(mapStateToProps, { getUser })(Dashboard);
+export default connect(mapStateToProps, { getUser })(Feed);

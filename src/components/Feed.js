@@ -112,7 +112,6 @@ class Feed extends Component {
           
         </div>
           <section className="app-body">
-            <div className="padding"></div>
             <div className="post-feed">
               <ul className="post-feed">{mappedPosts}</ul>
               </div> 

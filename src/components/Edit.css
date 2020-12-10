@@ -1,0 +1,10 @@
+.post-container {
+  top: 40%;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5f5f566;
+	box-shadow: 2px 2px 3px #666666;
+}

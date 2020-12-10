@@ -17,15 +17,36 @@
 	font-weight: 1000;
 	font-size: 50px;
 	color: white;
-	flex: auto;
 	word-spacing: 2;
+	opacity: .85;
+	display: flex;
+	align-content: center;
+	align-self: center;
+	width: 300px;
+  border: 10px solid yellow;
+  padding: 5%;
+	margin: 5%;
+	border-radius: 15%;
+	margin-left: 500px;
 }
 
 .register-styling {
-	font-weight: 1000;
-	font-size: 50px;
-	color: white;
-}
+
+		font-size: 50px;
+		color: white;
+		word-spacing: 2;
+		opacity: .85;
+		display: flex;
+		align-content: center;
+		align-self: center;
+		width: 500px;
+		height: auto;
+		border: 10px solid yellow;
+		padding: 5%;
+		margin: 5%;
+		border-radius: 30%;
+		margin-left: 410px;
+	}
 
 .letter-to-audience {
 	color: white;
@@ -40,4 +61,8 @@
 .login-info {
 	color: black;
 	flex: auto;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	
 }

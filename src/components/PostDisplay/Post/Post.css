@@ -1,14 +1,14 @@
 .post-container {
   width: 70%;
-  /* height: 8vh; */
+  height: 8vh;
   margin-top: 30px;
-  display: flex;
+  display: flexbox;
   background-color: #f5f5f5;
   color: #488db4;
   border-radius: 5px;
   box-shadow: 2px 2px 3px #666666;
-  /* overflow-y: scroll; */
-	/* overflow-x: hidden; */
+  overflow-y: scroll;
+	overflow-x: hidden;
 
 }
 .input-container input {
@@ -59,8 +59,6 @@
   align-items: center;
   background-color: #f5f5f566;
   box-shadow: 2px 2px 3px #666666;
-  overflow-y: scroll;
-	overflow-x: hidden;
 }
 
 .post-buttons {

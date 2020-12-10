@@ -5,6 +5,7 @@ const massive = require('massive');
 const session = require('express-session');
 const auth = require('./controllers/authController');
 const ctrl = require('./controllers/controller')
+// const nodemailer = require("./controllers/nodemailerController");
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
 
 const app = express();
@@ -39,5 +40,7 @@ app.get("/api/posts/:id", ctrl.getPosts);
 app.post("/api/posts/:id", ctrl.addPost);
 app.put("/api/posts/:id", ctrl.editPost);
 app.delete("/api/posts/:id", ctrl.deletePost);
+
+// app.post('/api/email', nodemailer.email)
 
 app.listen(SERVER_PORT, () => console.log(`Listening on ${SERVER_PORT}`));

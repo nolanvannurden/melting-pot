@@ -65,8 +65,8 @@ class Auth extends Component {
             {this.state.newUser ? 
             <div>
 				<div className="register-background">
-								
-                <h3 className="login-styling">Register</h3>
+			<div className="register-styling">			
+                <h3>Register</h3>
                 <form onSubmit={e => this.register(e)}>
                     <input 
                         name="email" 
@@ -88,15 +88,17 @@ class Auth extends Component {
                         onChange={ e => this.changeHandler(e)}
                     />
                     <button>Submit</button>
-                     </form>
                     <button onClick={this.toggleNewUser}>Already a user?</button>
+                     </form>
 				</div>
+                </div>		
             </div>
             :
             <div>
 				<div className="login-background">
-                 <h3 className="login-styling">Login</h3>
-                    <form onSubmit={e => this.login(e)}>
+                <div className="login-styling">
+                 <h3>Login</h3>
+                    <form  onSubmit={e => this.login(e)}>
                         <input 
                             name="email" 
                             value={email} 
@@ -112,8 +114,9 @@ class Auth extends Component {
                         />
                     <button>Submit</button>
                     
-                </form>
                         <button onClick={this.toggleNewUser}>Want to join?</button>
+                </form>
+                </div>
                             <h4 className="letter-to-audience">This is a website created for the sharing of recipes with your closest friends and family. The whole idea is to help each other perfect their cooking skills/recipes. This site was intended to help you discover new recipes and learn new cooking techniques.
                             </h4>
 				    </div>  

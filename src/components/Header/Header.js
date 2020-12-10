@@ -11,8 +11,8 @@ import {logoutUser} from '../../redux/reducer';
 const Header = (props) => {
   return (
 
-    
-    <nav className="nav-header">
+    <div className="sticky">
+    <nav className="nav-header nav-image">
       <h1>Welcome to The Melting Pot!</h1>
       <div className="nav-links">
         <div>
@@ -33,6 +33,7 @@ const Header = (props) => {
         </div>
       </div>
     </nav>
+    </div>
   );
 };
 

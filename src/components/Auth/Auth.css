@@ -1,68 +1,56 @@
 .register-background {
-	background-image: url('https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg');
-	height: 100vh;
-	width: 100%;
-	background-size: cover;
+  background-image: url("https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
 }
 
 .login-background {
-	background-image: url('https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?size=626&ext=jpg');
-	height: 100vh;
-	width: 100%;
-	background-size: cover;
+  background-image: url("https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?size=626&ext=jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  display: flex;
 }
 
 .login-styling {
-	margin: 0;
-	font-weight: 1000;
-	font-size: 50px;
-	color: white;
-	word-spacing: 2;
-	opacity: .85;
-	display: flex;
-	align-content: center;
-	align-self: center;
-	width: 300px;
-  border: 10px solid yellow;
+  font-size: 200%;
+  color: yellow;
+  opacity: 0.85;
+  width: 25%;
+  height: 10%;
+  border: 5px solid yellow;
   padding: 5%;
-	margin: 5%;
-	border-radius: 15%;
-	margin-left: 500px;
+  margin: 5%;
+  border-radius: 15%;
 }
 
 .register-styling {
-
-		font-size: 50px;
-		color: white;
-		word-spacing: 2;
-		opacity: .85;
-		display: flex;
-		align-content: center;
-		align-self: center;
-		width: 500px;
-		height: auto;
-		border: 10px solid yellow;
-		padding: 5%;
-		margin: 5%;
-		border-radius: 30%;
-		margin-left: 410px;
-	}
+  font-size: 50px;
+  color: white;
+  opacity: 0.85;
+  display: flex;
+  align-content: center;
+  align-self: center;
+  width: 500px;
+  height: auto;
+  border: 10px solid yellow;
+  padding: 5%;
+  margin: 5%;
+  border-radius: 30%;
+  margin-left: 35%;
+}
 
 .letter-to-audience {
-	color: white;
-	flex: auto;
-	font-size: 20px;
-	text-shadow:
-			0.07em 0 black,
-			0 0.07em black,
-			-0.07em 0 black,
-			0 -0.07em black;
+  color: white;
+  flex: auto;
+  font-size: 20px;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
 }
 .login-info {
-	color: black;
-	flex: auto;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	
+  color: black;
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }

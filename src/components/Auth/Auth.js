@@ -63,9 +63,9 @@ class Auth extends Component {
         const {email, password, username} = this.state;
         return(<div>
             {this.state.newUser ? 
-            <div>
+
 				<div className="register-background">
-			<div className="register-styling">			
+			<div className="register-styling register-background">			
                 <h3>Register</h3>
                 <form onSubmit={e => this.register(e)}>
                     <input 
@@ -91,13 +91,13 @@ class Auth extends Component {
                     <button onClick={this.toggleNewUser}>Already a user?</button>
                      </form>
 				</div>
-                </div>		
+		
             </div>
             :
             <div>
 				<div className="login-background">
                 <div className="login-styling">
-                 <h3>Login</h3>
+                 <div>Login</div>
                     <form  onSubmit={e => this.login(e)}>
                         <input 
                             name="email" 
@@ -118,6 +118,9 @@ class Auth extends Component {
                 </form>
                 </div>
                             <h4 className="letter-to-audience">This is a website created for the sharing of recipes with your closest friends and family. The whole idea is to help each other perfect their cooking skills/recipes. This site was intended to help you discover new recipes and learn new cooking techniques.
+
+
+                            "If I'm an advocate for anything, it's to move. As far as you can, as much as you can. Across the ocean, or simply across the river. Walk in someone else's shoes or at least eat their food. It's a plus for everybody."
                             </h4>
 				    </div>  
                 </div>}

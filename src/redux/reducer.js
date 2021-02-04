@@ -17,6 +17,8 @@ export function loginUser(user){
 	}
 }
 
+//Map data from within input fields to pass onto each component
+
 export const logoutUser = () => (
 	{
 			type: LOGOUT_USER,
